@@ -1,0 +1,32 @@
+#last-pull-comment{
+	font-size: 10px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#almond-table{
+	margin-bottom: 0px;
+	text-align: center;
+}
+#almond-table > a, th, tr, td {
+	text-align: center;
+}
+#almond-table-title{
+	text-align: center;
+}
+#lite-to-pro-version-comment{
+	font-size: 10px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#almond-volume{
+	font-size: 10px;
+	text-align: right;
+	margin-bottom: 20px;	
+}
+#almond-alert{
+	font-size: 10px;
+	text-align: right;
+	margin-bottom: 20px;
+	color: red;	
+}
+

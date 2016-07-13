@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Almond Stock Market Data Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Almond Stock Market Data&rdquo; Documentation by &ldquo;Gabriel Maldonado - AlmondWP&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Almond Stock Market Data&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 10/April/2016<br>
+					By: Gabriel Maldonado - AlmondWP<br>
+					Email: <a href="mailto:hello@gabrielmaldonado.me">hello@gabrielmaldonado.me</a>
+					</strong>
+				</p>
+			</div>
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/gma992">here</a>. Thanks so much!</p>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#using">Using Almond Stock Market Data</a></li>
+			<li><a href="#configuration">Configuration options</a></li>
+			<!--<li><a href="#considerations">Some considerations</a></li>-->
+		</ol>
+		
+		<hr>
+		
+		<h3 id="installation"><strong>A) Installation</strong> - <a href="#toc">top</a></h3>
+		<p>Once you have your zip file from Envato you only need to upload it through the administration area in your WordPress website. <strong>Click on Dashboard > Plugins > Add New</strong>.</p>
+		
+		<img src="assets/images/add-new-plugin.png" alt="installation-1" />
+		
+		<p>In the <strong>Add Plugins</strong> page you only have to click on the "Upload Plugin" button and select the file containing your new plugin. </p>
+		
+		<img src="assets/images/upload-plugin.png" alt="installation-2" />
+
+		<p>Once you click the <strong>Install now</strong> button WordPress will take care of the process and show you a new page similar to this one</p>
+		
+		<img src="assets/images/installation-success.png" alt="installation-3" />
+
+		<p>The plugin will appear in your <strong>Installed Plugins</strong> list, and once you activate it you will see few options under its name
+		:</p>
+		<ul>
+			<li><strong>Deactivate</strong>: You can deactivate or activate Almond Stock Market Data clicking here.</li>
+			<li><strong>Edit</strong>: This link will redirect you to the source code of the plugin. I do not recommended to change anything from the source code if you do not fully understand what are you doing. In any case I'm available for customizations, just <a href="mailto:hello@gabrielmaldonado.me">contact me</a> if you need to customize Almond Stock Market Data to fit your needs.</li>
+			<li><strong>Settings</strong>: Clicking here will redirect you to the Widgets page, where the plugin can be used and configured.</li>
+			<li><strong>More plugins by AlmondWP</strong>: More plugins created by me :)</li>
+		</ul>
+
+		<img src="assets/images/almond-stock-market-data-menu.png" alt="installation-4" />
+
+		<p>The next step will be clicking on <strong>Settings</strong> so you can use the plugin in your website</p>
+
+		<hr>
+
+		<h3 id="using"><strong>B) Using Almond Stock Market Data</strong> - <a href="#toc">top</a></h3>
+
+		<p>Activate it under <strong>Appearance > Widgets > Available Widgets</strong> or clicking in <strong>Settings</strong> below the plugin name as shown in the Installation guide. Once you're in the Widgets page you only need to grab the Almond Stock Market Data widget from the Available Widgets column and drag and drop it into the widget are you like  (primary, secondary, footer, homepage, ... options will depend on your theme).</p> 
+
+		<img src="assets/images/available-widgets.png" alt="using-1" />
+
+		<ul>
+			<li><strong>Title</strong>: The title you'd like to show in the front of your website in the top of the widget, if any.</li>
+			<li><strong>Tickers</strong>: a ticker is the one to four letter code that represents a particular stock or company in the stock market, writing the ticker of any company available will return the actual price and volume about the company.</li>
+			<span>Examples:</span>
+			<ul>
+				<li>The Coca-Cola Co -> ticker: <strong>KO</strong></li>
+				<li>Procter &amp; Gamble Co -> ticker: <strong>PG</strong></li>
+				<li>Amazon.com, Inc. -> ticker: <strong>AMZ</strong></li>
+				<li>AT&amp;T Inc. -> ticker: <strong>T</strong></li>
+			</ul>
+		</ul>
+
+		<img src="assets/images/full-plugin.png" alt="using-2" />
+		<img src="assets/images/filling-tickers.png" alt="using-3" />
+		<hr>
+		
+		<h3 id="configuration"><strong>C) Configuration options</strong> - <a href="#toc">top</a></h3>
+
+		<img src="assets/images/configuration.png" alt="configuration-1" />
+		
+		<ul>
+			<li><strong>Activate links on tickers</strong>: This option will activate create a link to Yahoo Finances on the ticker, so when the ticker is clicked it will open a new window in your browser that will show you all the information regarding that company.</li>
+			<li><strong>Use Google Finances</strong>: The default previous link will redirect you to the company information on Yahoo Finances, clicking here it will open a new window in your browser that will show you all the information regarding the company in Google Finances instead.</li>
+			<li><strong>Show Trading Volumes</strong>: Activating this option the trading volume for the stocks will appear also in your website, not only the price, name and ticker of the company.</li>
+		</ul>
+		<p>Volume activated.</p>
+		<img src="assets/images/links-activated.png" alt="configuration-2" />
+		<p>Volume deactivated.</p>
+		<img src="assets/images/volume-activated.png" alt="configuration-3" />
+
+		<p>Yahoo Finances is the page used by default</p>
+		<img src="assets/images/yahoo-finances.png" alt="configuration-4" />
+
+		<p>Google Finances can be used instead just checking the box.</p>
+		<img src="assets/images/google-finances.png" alt="configuration-5" />
+		
+		<p>Finally, a videotutorial can be found in youtube by <a href="https://www.youtube.com/watch?v=jM-HrDHiNN8" target="_blank">clicking this link here</a></p>
+		<hr>
+				
+		<p>Once again, thank you so much for purchasing this theme, I'd be glad to help you if you have any questions relating to this plugin, I'll do my best to assist. If you have a more general question relating to the plugins on CodeCanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Gabriel Maldonado - AlmondWP</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
