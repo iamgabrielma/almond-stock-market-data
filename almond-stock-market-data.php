@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Almond Stock Market Data
-Plugin URI: http://gabrielmaldonado.me/wordpress-plugins
+Plugin URI: http://almondwp.com
 Description: Display stock market data in your website using a widget. Clean and simple. Activate it under Appearance > Widgets > Available Widgets or clicking in "Settings" below the plugin name.
 Version: 1.0
 Author: Gabriel Maldonado
-Author URI: http://gabrielmaldonado.me
+Author URI: http://almondwp.com
 License: GPL2
 */
 
@@ -25,6 +25,23 @@ function show_widget_link_on_activation($widget_links) {
 		return $widget_links;
 }
 add_filter("plugin_action_links_".plugin_basename(__FILE__), 'show_widget_link_on_activation', 10, 5);
+
+/* DEVELOPING SHORTCODE FOR SPAN TAGS */
+function gma_almond_stock_prices_shortcode_tags($attr){
+
+	switch ($attr) {
+		case 'test1':
+			echo 'test 1!!!';
+			break;
+		
+		default:
+			echo 'default';
+			break;
+	}
+
+}
+add_shortcode( 's', 'gma_almond_stock_prices_shortcode_tags' );
+/* // DEVELOPING SHORTCODE FOR SPAN TAGS */
 
 class gma_almond_stock_prices extends WP_Widget{
 	
