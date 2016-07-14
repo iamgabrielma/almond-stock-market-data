@@ -1,0 +1,1 @@
+tests are going to be created into a wp core environment to be able to use PHPUnit.
