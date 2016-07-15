@@ -44,7 +44,7 @@ function content_filter_for_ko_functionality($content){
 	//print_r($post->post_content);
 	$to_replace = $post->post_content;
 	$a = '[KO]';
-	$ticker = '<span>coca cola</span>';
+	$ticker = '<span id="new-hover-functionality">coca cola</span>';
 	if (strrpos($to_replace, $a)) {
 		
 		echo '<strong> DEBUG: </strong> string to be replaced found!';
