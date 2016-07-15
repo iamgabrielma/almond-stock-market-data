@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Almond Stock Market Data
+Plugin Name: [1.1]Almond Stock Market Data
 Plugin URI: http://almondwp.com
 Description: Display stock market data in your website using a widget. Clean and simple. Activate it under Appearance > Widgets > Available Widgets or clicking in "Settings" below the plugin name.
 Version: 1.0
@@ -14,6 +14,13 @@ function gma_almond_plugin_custom_styles() {
 }
 add_action('wp_print_styles', 'gma_almond_plugin_custom_styles');
 
+function awp_almondwp_almond_stock_data_custom_script() {
+
+	wp_enqueue_script( 'awp-js', plugin_dir_url( __FILE__ ) . '/js/awp-js.js', array('jquery'), '1.0.0', true );
+
+}
+add_action('plugins_loaded', 'awp_almondwp_almond_stock_data_custom_script');
+
 function register_gma_almond_stock_prices_widget(){
 	register_widget('gma_almond_stock_prices' );
 }
@@ -25,6 +32,38 @@ function show_widget_link_on_activation($widget_links) {
 		return $widget_links;
 }
 add_filter("plugin_action_links_".plugin_basename(__FILE__), 'show_widget_link_on_activation', 10, 5);
+
+function awp_debug(){
+	echo '<br>' . '///////////////////////////////////////////' . '<br>';
+}
+
+/* content filter for [KO], find [KO] in the post content and change it */
+function content_filter_for_ko_functionality($content){
+	global $post;
+	global $wpdb;
+	//print_r($post->post_content);
+	$to_replace = $post->post_content;
+	$a = '[KO]';
+	$ticker = '<span>coca cola</span>';
+	if (strrpos($to_replace, $a)) {
+		
+		echo '<strong> DEBUG: </strong> string to be replaced found!';
+		$content = str_replace($a, $ticker, $content);
+		awp_debug();
+		return $content;
+		
+		//return str_replace($to_replace, $a, $ticker);
+
+	} else {
+		echo 'nope';
+	}
+	//return 'yay';
+
+	//echo 'HELLO';
+
+}
+add_filter( 'the_content', 'content_filter_for_ko_functionality');
+//add_action( 'wp_head', 'content_filter_for_ko_functionality');
 
 /* DEVELOPING SHORTCODE FOR SPAN TAGS */
 function gma_almond_stock_prices_shortcode_tags($attr){
@@ -42,6 +81,8 @@ function gma_almond_stock_prices_shortcode_tags($attr){
 }
 add_shortcode( 's', 'gma_almond_stock_prices_shortcode_tags' );
 /* // DEVELOPING SHORTCODE FOR SPAN TAGS */
+
+
 
 class gma_almond_stock_prices extends WP_Widget{
 	
