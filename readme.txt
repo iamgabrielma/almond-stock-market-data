@@ -23,4 +23,4 @@ That's it! Now you can easily fill the Tickers below with the tickers of the com
 
 == Frequently Asked Questions ==
 
-http://gabrielmaldonado.me/wp-plugins-documentation/documentation.html
+http://almondwp.com
