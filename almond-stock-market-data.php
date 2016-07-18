@@ -52,9 +52,10 @@ class gma_almond_stock_prices extends WP_Widget{
 		function gma_almond_wp_http_api($each_ticker, $title, $instance, $args){
 
 			//$http_req_test_url = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20%28%22' . $each_ticker . '%22%29&env=store://datatables.org/alltableswithkeys';
-			$new_http_req_test_url = 'http://finance.google.com/finance/info?client=ig&q=nyse:ko';
-			$new_http_req_test_url_json_version = 'http://finance.google.com/finance/info?client=ig&q=nyse:ko&as_json=True';
+			//$new_http_req_test_url = 'http://finance.google.com/finance/info?client=ig&q=nyse:ko';
 			
+			$new_http_req_test_url_json_version = 'http://finance.google.com/finance/info?client=ig&q=nyse:' . $each_ticker . '&as_json=True';
+
 			//$get_result = wp_remote_get( $http_req_test_url, $args );
 			$new_get_result = wp_remote_get( $new_http_req_test_url_json_version, $args );
 			$new_get_result_just_body = wp_remote_retrieve_body($new_get_result );
@@ -78,12 +79,14 @@ class gma_almond_stock_prices extends WP_Widget{
 			echo '<br>' . '====================' . '<br>';
 			$exploded_output = explode('"', $new_get_result_just_body);
 			print_r($exploded_output);
-			echo '<br>' . '========== KO ==========' . '<br>';
+			echo '<br>' . '==========' . $each_ticker . '==========' . '<br>';
 			echo $exploded_output[7];
 			echo $exploded_output[15];
-			echo '<br>' . '========== PG ==========' . '<br>';
-			echo $exploded_output[7];
-			echo $exploded_output[15];
+			//echo '<br>' . '========== PG ==========' . '<br>';
+			//echo $exploded_output[7];
+			//echo $exploded_output[15];
+
+
 
 			//echo $new_get_result_just_body[0]->id;
 
@@ -153,6 +156,11 @@ class gma_almond_stock_prices extends WP_Widget{
 		$title = $instance['title'];
 		$ticker = strtoupper($instance['ticker']);
 
+		$each_ticker = ['ko','pg','vig'];
+		foreach ($each_ticker as $ticker) {
+			gma_almond_wp_http_api($ticker, $title, $instance, $args);
+		}
+
 
 		echo $args['before_widget'];
 		
@@ -162,7 +170,7 @@ class gma_almond_stock_prices extends WP_Widget{
 			<span>$title</span>
 		</div>";
 		
-		gma_almond_wp_http_api($ticker, $title, $instance, $args);
+		//gma_almond_wp_http_api($ticker, $title, $instance, $args);
 
 		echo $args['after_widget'];
 
